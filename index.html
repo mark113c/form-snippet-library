@@ -8,7 +8,346 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
   </head>
   <body>
-    <h1>Form Snippet Library</h1>
+    <div class="container">
+      <h1>Form setup</h1>
+
+      <p>There are a few important things to remember about form tags.</p>
+
+      <pre><code class="language-html"><input type=""><form action="thanks.html" method="post">
+      ⋮
+    </form></code></pre>
+
+      <p>
+        The action attribute is the URL to where the form’s information should be submitted—but we need a programming language to do something with it. The method attribute is either get or post—should most often be “post”. (This matters
+        most to backend developers.)
+      </p>
+    </div>
+
+    <div class="container">
+      <h2>Inputs and labels</h2>
+
+      <p>
+        Inside a form we can create a bunch of inputs—the things people interact with and submit their information to. All input elements must have a label element associated with them, primarily for accessibility reasons but also as a way
+        to denote what content should be entered into the field. The input element needs an ID on it, then the label points to the ID using it’s for attribute.
+      </p>
+
+      <pre><code class="language-html"><input type="">
+        <form action="thanks.html" method="post">
+        <!-- Labels are associated with inputs using the for and id attributes -->
+        <label for="name">Name</label>
+        <input id="name">
+      </form>
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Input types</h2>
+
+      <p>There are lots of different input types to use in forms—the default is text.</p>
+
+      <pre><code class="language-html"><input type="">
+        <!-- type="text" is the default for all elements and can be left off -->
+<input type="text">
+    </code></pre>
+      <ul>
+        <li><code class="language-html">number</code> — for accepting numbers</li>
+        <li><code class="language-html">email</code> - for accepting valid e-mail addresses</li>
+        <li><code class="language-html">url</code> — for valid website URLs</li>
+        <li><code class="language-html">password</code> — masks the text that’s being entered with bullets</li>
+        <li><code class="language-html">tel</code> - for telephone numbers</li>
+        <li><code class="language-html">date</code> — for accepting dates; a calendar picker</li>
+        <li><code class="language-html">range</code> - for selecting from a range of numbers</li>
+        <li><code class="language-html">color</code> — for picking a specific colour</li>
+        <li><code class="language-html">file</code> — for allowing the upload of files</li>
+        <li><code class="language-html">search</code> — for specifying the input as a search field</li>
+      </ul>
+
+      <p>Some examples:</p>
+
+      <pre><code class="language-html"><input type="">
+        <label for="email">E-mail address</label>
+        <input type="email" id="email">
+        
+        <label for="homepage">Homepage</label>
+        <input type="url" id="homepage">
+        
+        <label for="fav-color">Favourite colour</label>
+        <input type="color" id="fav-color">
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Other attributes</h2>
+
+      <p>Some elements can have other attributes to control what content is allowed to be entered into the field.</p>
+
+      <ul>
+        <li><code class="language-html">min</code> — For specifying a minimum value, for ranges and numbers</li>
+        <li><code class="language-html">max</code> — For specifying a maximum value, for ranges and numbers</li>
+        <li><code class="language-html">step</code> — For specifying a jump value for each increment, for ranges and numbers</li>
+      </ul>
+
+      <pre><code class="language-html"><input type="">
+       <!--
+      Would allow any number between 0 and 1, in increments of 0.1
+      e.g. 0, 0.1, 0.2, 0.3 ... 0.9, 1.0
+      -->
+      <input type="number" min="0" max="1" step="0.1">
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Placeholders</h2>
+
+      <p>The placeholder attribute can be used to put example text into an element—but should never be used as a replacement for the label.</p>
+
+      <pre><code class="language-html"><input type="">
+        <input type="url" placeholder="http://example.com">
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Other attributes</h2>
+
+      <p>Some elements can have other attributes to control what content is allowed to be entered into the field.</p>
+
+      <ul>
+        <li><code class="language-html">min</code> — For specifying a minimum value, for ranges and numbers</li>
+        <li><code class="language-html">max</code> — For specifying a maximum value, for ranges and numbers</li>
+        <li><code class="language-html">step</code> — For specifying a jump value for each increment, for ranges and numbers</li>
+      </ul>
+
+      <pre><code class="language-html"><input type="">
+       <!--
+      Would allow any number between 0 and 1, in increments of 0.1
+      e.g. 0, 0.1, 0.2, 0.3 ... 0.9, 1.0
+      -->
+      <input type="number" min="0" max="1" step="0.1">
+    </code></pre>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <h1>Other input types</h1>
+
+      <p>There are some other input types that can be used in forms for more complex interactions.</p>
+
+      <h2>Textareas</h2>
+
+      <p>
+        An alternative to <pre><code class="language-html"><input type="text" /></code></pre> that allows multiple lines and longer text.
+      </p>
+
+      <pre><code class="language-html"><input type="" />
+        <label for="message">Message</label>
+        <textarea id="message"></textarea></code></pre>
+    </div>
+
+    <div class="container">
+
+      <h2>Select boxes</h2>
+
+      <p>Select boxes, aka dropdown boxes, allow a user to pick one option of many.</p>
+
+      <pre><code class="language-html"><input type="" />
+        <label for="province">Province or State</label>
+        <select id="province">
+          <optgroup label="Canada">
+            <option>Ontario</option>
+            <option>Québec</option>
+          </optgroup>
+          <optgroup label="United States">
+            <option>New York</option>
+            <option>California</option>
+          </optgroup>
+        </select></code></pre>
+
+<p>Options elements can be grouped together using the <pre><code class="language-html"><optgroup></code></pre> tag. The  <pre><code class="language-html">label="…"</code></pre>pre attribute is used to show a non-selectable heading for the group.</p>
+    </div>
+
+    <pre><code class="language-html"><input type="" />
+      <label for="province">Province</label>
+<select id="province">
+<option>Manitoba</option>
+<option>Ontario</option>
+<option>Quebec</option>
+</select></code></pre>
+
+    <div class="container">
+      <h2>Checkboxes</h2>
+
+      <p>Checkboxes allow a selection of multiple items out of a few possiblities.</p>
+
+      <pre><code class="language-html"><input type="">
+        <input type="checkbox" id="apato">
+        <label for="apato">Apatosaurus</label>
+    </code></pre>
+
+    <p>In checkboxes (and radio buttons) it’s most common to have the label come after the input element.<br><br>
+
+      If you want the checkbox to be checked by default use the checked attribute. This applies to radio buttons too.</p>
+
+      <pre><code class="language-html"><input type="">
+        <input type="checkbox" id="apato" checked>
+        <label for="apato">Apatosaurus</label>
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Radio buttons</h2>
+
+      <p>Radio buttons allow users to select a single option out of many, similar to a select box.</p>
+
+      <pre><code class="language-html"><input type="">
+        <fieldset>
+          <legend>What’s your favourite colour?</legend>
+        
+          <input type="radio" id="green" name="fav-color">
+          <label for="green">Green</label>
+        
+          <input type="radio" id="light-green" name="fav-color">
+          <label for="light-green">Light Green</label>
+        
+          <input type="radio" id="dark-green" name="fav-color">
+          <label for="dark-green">Dark Green</label>
+        </fieldset>
+    </code></pre>
+
+    <p>The way to group a bunch of radio buttons together, so they work as a single group is to give them all the same name, like <pre><code class="language-html"><input type="">name="fav-color"</code></pre>.</p>
+
+      <pre><code class="language-html"><input type="">
+        <input type="checkbox" id="apato" checked>
+        <label for="apato">Apatosaurus</label>
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Fieldsets</h2>
+
+      <p>Above, we’re using the <pre><code class="language-html"><input type=""><fieldset></code></pre>  element to group radio buttons together semantically. The fieldset can be used to group any inputs together in a form that logically belong together.</p>
+
+<p><i>Groups of radio buttons and checkboxes should always be surrounded by fieldsets.</i></p>
+
+  <p>Here’s an example of grouping address inputs together:</p>
+
+      <pre><code class="language-html"><input type="">
+        <fieldset>
+          <legend>Mailing Address</legend>
+        
+          <div>
+            <label for="street-address">Street Address</label>
+            <input id="street-address">
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input id="city">
+          </div>
+          <div>
+            <label for="country">Country</label>
+            <input id="country">
+          </div>
+          <div>
+            <label for="postal-code">Postal Code</label>
+            <input id="postal-code">
+          </div>
+        </fieldset>
+    </code></pre>
+    </div>
+
+    <div class="container">
+      <h2>Buttons</h2>
+
+      <p>All forms need to have buttons otherwise the form’s information can’t be sent.</p>
+
+      <pre><code class="language-html"><input type="">
+        <form>
+          ⋮
+          <button type="submit">Send</button>
+        </form>
+    </code></pre>
+
+      <p>Most often the button’s type should be set to “submit”. But if you don’t want it to submit the form and control the button with JavaScript, leave the <code>type</code> attribute off.</p>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <h1>Styling forms and inputs</h1>
+
+      <p><b>When it comes to styling inputs and forms, the most important thing to remember that they are just plain old HTML elements. They can have borders, paddings, margins, colors, fonts, display—anything.</b></p>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <h1>Making forms functional</h1>
+
+<p>There’s a few small things to can to to make our forms slightly more functional without a backend server.</p>   
+ </div>
+
+ <div class="container">
+  <h2>Required</h2>
+
+<p>The <code>required</code> attribute can be added to fields to force the user to type something into the field. If the field type is something specific like email it will enforce a properly formatted email address.</p>   
+<pre><code class="language-html"><input type="">
+  <label for="email">E-mail address</label>
+  <input type="email" id="email" required>
+</code></pre>
+</div>
+
+<div class="container">
+  <h2>Lenght</h2>
+
+<p>As seen above we can control the max and min for numbers—we can do something similar for text fields with the <code>maxlength</code> and <code>minlength</code> attributes.</p>   
+
+<pre><code class="language-html"><input type="">
+  <label for="password">Password</label>
+  <input type="password" minlength="6" id="password">
+</code></pre>
+</div>
+
+<div class="container">
+  <h2>Pattern</h2>
+
+<p>The pattern attribute can be used to restrict the format of the text entered into a field. It uses regular expressions.</p>   
+
+<pre><code class="language-html"><input type="">
+  <label for="postalcode">Postal code</label>
+  <input type="text" pattern="[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]" id="postalcode">  
+</code></pre>
+
+<p><i>The above regular expression looks for a valid Canadian postal code.</i></p>
+</div>
+
+<div class="container">
+  <h2>Form submission without a server</h2>
+
+<p>If you’re creating a static website, without wanting to have to write backend PHP, etc. to make your website function, there’s a few great services you can use.</p>   
+
+<p>These services work in a fashion similar to this:</p>
+
+<ol>
+  <li>You create a form, that points to their service.</li>
+  <li>The user submits the form.</li>
+  <li>The data is sent to the service’s website.</li>
+  <li>The service composes an email and sends it to you.</li>
+  <li>The service redirects the user back to your website to display a message.</li>
+
+
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+
+    <!-- END OF CONTENT -->
 
     <!-- if you need to show copy-pastable code, you can use the following-->
     <!--<pre><code class="language-html"><input type=""></code></pre>-->
@@ -19,3 +358,5 @@
     });
   </script>
 </html>
+
+

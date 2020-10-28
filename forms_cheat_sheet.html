@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Snippet Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
+  </head>
+  <body>
+
+    <pre><code class="language-html"> <form method="post</code></pre>
+
+        Tag that wraps around all the form elements.
+        
+        action points to where the data should be submitted.
+        
+       <pre><code class="language-html">  <fieldset> </code></pre>
+        
+        Used to group elements together, like radio buttons.
+        
+        Must always have a legend.
+        
+       <pre><code class="language-html">  <legend></code></pre>
+        
+        Adds a title to the fieldset.
+        
+        Must be inside a fieldset.
+        
+        <pre><code class="language-html"> <button type="submit"></code></pre>
+        
+        Every form needs a button.
+        
+        <pre><code class="language-html"> <label for="…"></code></pre>
+        
+        Adds a name to any field.
+        
+        Every field must have a label.
+        
+        <pre><code class="language-html"> <input id="…" type="…"></code></pre>
+        
+        Adds an input field of varying types.
+        
+        Must always have an id to associate a label.
+        
+        The type="…" attribute defaults to text.
+        
+        <pre><code class="language-html"> <textarea id="…"></code></pre>
+        
+        Adds a large, multi-line text field.
+        
+        Must always have an id to associate a label.
+        
+        <pre><code class="language-html"> <select id="…"></code></pre>
+        
+        Creates a drop-down choice input.
+        
+        Populate the choices with <option> tags.
+        
+        Must always have an id to associate a label.
+        
+       <pre><code class="language-html">  <datalist id="…"></code></pre>
+        
+        Creates a list of items for autocompletion.
+        
+        Populate the choices with <option> tags.
+        
+        Won’t be visible until the associated field is typed into.
+        
+       <pre><code class="language-html">  <option></code></pre>
+        
+        Creates an entry inside <select> or <datalist>.
+        
+        Use the selected attribute to set a default value.
+        
+        For select: <option>Triceratops</option>
+        
+        For datalist: <option value="Pteranodon">
+        
+       <pre><code class="language-html">  <optgroup label="…"></code></pre>
+        
+        Creates a group of options inside a <select>.
+        
+        label="…" is used as a visible name for the group.
+        
+       <pre><code class="language-html">  <output for="…"></code></pre>
+        
+        Represents the result of a calculation performed by JavaScript.
+        
+        for="…" is a space-separate list of input ids that contributed to the calculation.
+
+  </body>
+  
+  <script>
+    document.querySelectorAll("pre code").forEach((el) => {
+      el.textContent = el.innerHTML;
+    });
+  </script>
+</html>
